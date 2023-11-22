@@ -20,10 +20,46 @@ a {
 	justify-content: center;
 }
 img {
-	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	max-width: 100%;
+  height: auto;
+
 }
+@media only screen and (max-width: 767px) {
+	body {
+		font-size: 16px;
+	  }
+	  h1,
+	  h2,
+	  h3,
+	  p {
+		margin-bottom: 15px;
+	  }
+	}
+
+	@media only screen and (min-width: 1024px) {
+		.nav-toggle {
+			display: none;
+		  }
+		  nav {
+			display: block;
+		  }
+		  .services .service-item {
+			flex-basis: calc(33.33% - 20px); /* Adjust number of columns */
+			margin: 10px;
+		  }
+		}
+
+		/* Footer */
+		footer {
+		  width: 100%;
+		  /* For wider screens, consider expanding the footer's width */
+		  /* For example */
+		  @media only screen and (min-width: 1024px) {
+			width: 100vw;
+		  }
+		}
 p {
 	color: black;
 	font-size: 1.4rem;
@@ -206,10 +242,16 @@ p {
 	position: relative;
 	z-index: 1;
 }
-@media only screen and (max-width: 768px) {
+#hero h1 {
+    font-size: 3rem; /* Adjust font size */
+  }
+@media only screen and (max-width: 767px) {
 	#hero {
 	  background-size: contain;
 	  background-repeat: no-repeat;
+	  width: 100%;
+	  height: auto;
+	  padding: 50px 20px;
 
 	}
   }
@@ -277,7 +319,7 @@ p {
 	text-align: center;
 	max-width: 1500px;
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 50px 20px;
 }
 #services .service-top {
 	max-width: 500px;
@@ -300,10 +342,11 @@ p {
 	border-radius: 10px;
 	background-image: url(./img/img-1.png);
 	background-size: cover;
-	margin: 10px 5%;
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
+	flex-basis: 100%; /* Set items to full width */
+    margin: 10px 0; 
 }
 #services .service-item::after {
 	content: '';
@@ -338,7 +381,7 @@ p {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 50px 20px;
 }
 #projects .projects-header h1 {
 	margin-bottom: 50px;
@@ -348,6 +391,11 @@ p {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
+#projects .all-projects .project-item {
+    width: 100%; /* Set items to full width */
+    margin: 20px 0;
+
 }
 #projects .project-item {
 	display: flex;
@@ -412,11 +460,12 @@ p {
 	text-align: center;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 100px 20px;
+	padding: 50px 20px;
 }
 #about .col-left {
-	width: 250px;
 	height: 360px;
+	width: 100%; /* Set columns to full width */
+    margin: 20px 0;
 }
 #about .col-right {
 	width: 100%;
@@ -460,24 +509,26 @@ p {
 	max-width: 1200px;
 	margin: 0 auto;
 	width: 90%;
+	padding: 50px 20px; 
 }
 #contact .contact-items {
 	/* max-width: 400px; */
 	width: 100%;
+	
 }
 #contact .contact-item {
-	width: 80%;
 	padding: 20px;
 	text-align: center;
 	border-radius: 10px;
 	padding: 30px;
-	margin: 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	box-shadow: 0px 0px 18px 0 #0000002c;
 	transition: 0.3s ease box-shadow;
+	width: 100%; /* Set items to full width */
+    margin: 20px 0;
 }
 #contact .contact-item:hover {
 	box-shadow: 0px 0px 5px 0 #0000002c;
