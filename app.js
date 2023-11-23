@@ -24,3 +24,25 @@ menu_item.forEach((item) => {
 	});
 });
 
+function openModal(imagePath) {
+	var modal = document.getElementById("myModal");
+	var modalImg = document.getElementById("img01");
+	modal.style.display = "block";
+	modalImg.src = imagePath;
+  
+	modal.onclick = function() {
+	  modal.style.display = "none";
+	};
+  }
+  
+  var closeBtn = document.getElementsByClassName("close")[0];
+  closeBtn.onclick = function() {
+	var modal = document.getElementById("myModal");
+	modal.style.display = "none";
+  };
+  
+  var modalImg = document.getElementById("img01");
+  modalImg.onclick = function(event) {
+	event.stopPropagation();
+  };
+  
